@@ -1,0 +1,82 @@
+<?php
+?>
+
+
+
+<h1>Request a Product</h1>
+
+<div>
+
+      <form name="my-form" id="my-form" action="<?php echo $this->getUrl("requestnewproduct/index/saveRequestedProduct") ?>" method="post" >
+     <fieldset>
+	  
+       <div style="width:480px;">
+              <ul>
+              
+                  <li class="requestproduct">
+                     <label class="required" for="your_name" ><?php echo $this->__('Your Name') ?><em>*</em></label>
+                      <div class="input-box" style="float:right;">
+                        <input type="text" name="yourname" id="your_name" class="requestproductbox1 input-text required-entry"/>
+                       </div>
+                       
+                    </li>
+
+                  <li class="requestproduct">
+                     <label for="your_email"><?php echo $this->__('Your Email') ?><em>*</em></label>
+                      <div class="input-box" style="float:right;">
+                        <input type="text" name="youremail" id="your_email" class="requestproductbox1 input-text validate-email required-entry"/>
+                       </div>
+                  </li>
+                  <li class="requestproduct1">
+                     <label for="product_name"><?php echo $this->__('Product Name/Description') ?><em>*</em></label>
+                      <div class="input-box" style="float:right;">
+                        <textarea name="productname" id="product_name" class="requestproductbox required-entry"></textarea>
+                       </div>
+                  </li>
+                  <li class="requestproduct">
+                     <label for="brand"><?php echo $this->__('Brand') ?></label>
+                      <div class="input-box" style="float:right;">
+                        <input type="text" name="brand" id="brand" class="requestproductbox1 input-text"/>
+                       </div>
+                  </li>
+                   <li class="requestproduct1">
+                     <label for="seen_product"><?php echo $this->__('Where have you seen this product') ?></label>
+                      <div class="input-box" style="float:right;">
+                        <textarea name="seenproduct" name="seenproduct" id="seen_product" class="requestproductbox "></textarea>
+                       </div>
+                  </li>
+                  <li class="requestproduct1">
+                     <label for="about_product"><?php echo $this->__('Tell us about this product') ?></label>
+                      <div class="input-box" style="float:right;">
+                        <textarea name="aboutproduct"  name="aboutproduct" id="about_product" class="requestproductbox "></textarea>
+                       </div>
+                  </li>
+                </ul>
+  <button class="button" onclick="requestForm(this)" title="Submit" value="SUBMIT">
+          <span><span>Submit</span></span></button>
+           </div> 
+        
+    
+              </fieldset>
+             </form>
+
+</div>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+    var requestForm = new VarienForm('my-form', true);
+   
+    
+    function requestForm(button)
+    {
+        if(requestForm.validator && requestForm.validator.validate()){
+            button.disabled = true;
+            loginForm.submit();
+        }
+    }
+//]]>
+</script>
+
+

@@ -1,0 +1,20 @@
+<?php
+/**
+* @copyright Niveus Solutoins.
+*/
+class Niveus_Requestproduct_Block_Requestnewproduct extends Mage_Core_Block_Template
+{
+
+protected function _toHtml()
+    {
+if(Mage::getStoreConfig('niveus_requestproduct_requestnewproduct/settings/enable')){
+
+        if (!$this->getTemplate()) {
+            return '';
+        }
+        $html = $this->renderView();
+        return $html;
+    }
+}
+
+}

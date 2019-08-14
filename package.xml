@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<package>
+    <name>Niveus_Requestproduct</name>
+    <version>1.1.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Know your customers requirements better with the "Request New Product" Magento extension. The extension helps your keep in pace with the growing customer demands in your market.</summary>
+    <description>"Request New Products" allows your customers to fill in a form requesting any new product, that they would want to purchase and that is not already there on your catalog. The store admin can see all the requested products in the console. Based on the number of demands, you can decide the products to add while expanding your catalog. By keeping yourself abreast with customers requirements and by building your product catalog, you can ensure that your customers do not need to go elsewhere for their needs.&#xD;
+&#xD;
+Features:&#xD;
+* Place link to the form in any part of your site&#xD;
+* Form for customer to enter new product requirements&#xD;
+* View new product requests in the admin panel</description>
+    <notes>Quick Installation Manual:&#xD;
+1) Install the extension through Magento Connect.&#xD;
+2) Please wait until the installation is 100% finished:&#xD;
+- Do not perform other actions on the admin panel while the installation progresses&#xD;
+- Do not refresh the admin panel/Magento Connect tab before the installation completes&#xD;
+3) Once the installation has completed successfully:&#xD;
+- Clear the Magento cache: Go to "System" &gt; "Cache Management" and click "Flush Magento Cache".&#xD;
+&#xD;
+We can place the "Request Product" link to top navigation menu, Beside My Account,My Cart,Checkout.&#xD;
+&#xD;
+For Example My Account link is getting display from the following layout &#xD;
+&#xD;
+app\design\frontend\default\&lt;your theme&gt;\layout\customer.xml&#xD;
+&#xD;
+Add the following  below the My Account node&#xD;
+&#xD;
+&lt;action method="addLink" translate="label title"&gt;&#xD;
+    			&lt;label&gt;Request Product&lt;/label&gt;&#xD;
+    			&lt;url&gt;requestnewproduct&lt;/url&gt;&#xD;
+    			&lt;title&gt;Request Product&lt;/title&gt;&#xD;
+    			&lt;prepare&gt;true&lt;/prepare&gt;&#xD;
+    			&lt;position&gt;9&lt;/position&gt;&#xD;
+&lt;/action&gt;</notes>
+    <authors><author><name>Niveus Solutions</name><user>niveussolutions</user><email>support@niveussolutions.com</email></author></authors>
+    <date>2013-11-08</date>
+    <time>12:01:43</time>
+    <contents><target name="magecommunity"><dir name="Niveus"><dir name="Requestproduct"><dir name="Block"><dir name="Adminhtml"><dir name="Requestnewproduct"><file name="Grid.php" hash="7e560659eb4228dce070b89bfcaa3b96"/><file name="Grid.php~" hash="e4949c0a81675d7482e4fea1525e35e8"/></dir><file name="Requestnewproduct.php" hash="49d5319bc250e3a2fccabf64fafb6f2a"/></dir><file name="Requestnewproduct.php" hash="748f620dee44f71c8e48997b45afbe3b"/><file name="Requestnewproduct.php~" hash="fde75b6ea0e2c29213d38200f8892d65"/></dir><dir name="Helper"><file name="Data.php" hash="3b9e179e7208b94a24953047acd8dfeb"/></dir><dir name="Model"><dir name="Mysql4"><dir name="Requestnewproduct"><file name="Collection.php" hash="214ee065627f865530848a104fbd7e42"/></dir><file name="Requestnewproduct.php" hash="c41aba6bc9960cca9d57bb0b79a9da99"/></dir><file name="Requestnewproduct.php" hash="3e8de61d3aa001b29d17e1eb98dbda45"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="RequestnewproductController.php" hash="fc65526ef2da124a120874f3e277718d"/><file name="RequestnewproductController.php~" hash="ea47ea4a541656ee5a914d8c87938799"/></dir><file name="IndexController.php" hash="a787851743faf5c52d789c540e314b3a"/><file name="IndexController.php~" hash="2b0a2d46cf24e88fc50f2378961ab966"/></dir><dir name="etc"><file name="adminhtml.xml" hash="e936e4ca7dd55f16f3f85b3aa20c105f"/><file name="adminhtml.xml~" hash="204d15a2571abbe5895cbd6dbc179b11"/><file name="config.xml" hash="11cf2058c52db2e4cbb3a787f3a97164"/><file name="system.xml~" hash="a24f345235e75a6ce54645b78f719202"/></dir><dir name="sql"><dir name="niveus_requestproduct_setup"><file name="mysql4-install-1.0.0.php" hash="09bf04e865cc38bc18011401e96e877e"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Niveus_Requestproduct.xml" hash="5fcbb3e59604739ac5b235b3a212c79f"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="niveus"><file name="requestproduct.xml" hash="6d8b3a0c11c656bb54a11d31e8357382"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="requestproduct.xml" hash="f827a869f7bdb2fd1b54618a188c9f7c"/></dir><dir name="template"><dir name="requestproduct"><file name="requestproduct.phtml" hash="4a7ccb942ce5a81685865db29a53dbef"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><dir name="niveus"><file name="requestproduct.css" hash="7fe5f65d819b45e510df519525243d4f"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

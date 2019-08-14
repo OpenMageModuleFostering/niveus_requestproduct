@@ -1,0 +1,80 @@
+<?php
+/**
+* @copyright Niveus Solutoins.
+*/ 
+class Niveus_Requestproduct_IndexController extends Mage_Core_Controller_Front_Action
+{
+	/**
+	 * index method for the controller
+	 */
+	public function indexAction()
+	{
+		$this->loadLayout(array('default'));
+		$this->renderLayout();
+	}
+
+	/**
+	 * This method save the requested new product
+	 * into the database 
+	 */ 
+	public function saveRequestedProductAction(){
+		
+			$name =  $this->getRequest()->getParam("yourname");
+			$email =  $this->getRequest()->getParam("youremail");
+			$productname= $this->getRequest()->getParam("productname");
+			$brand= $this->getRequest()->getParam("brand");
+			$seenproduct= $this->getRequest()->getParam("seenproduct");
+			$aboutproduct= $this->getRequest()->getParam("aboutproduct");
+						
+			try {
+				$model = Mage::getModel('niveus_requestproduct/requestnewproduct');
+	                
+				$model->setData(
+				    array(  'name' => $name,
+				            'email' => $email,
+				            'productname' => $productname,
+				            'brand' => $brand,
+				            'seenproduct' => $seenproduct,
+				            'aboutproduct' => $aboutproduct
+				            ))->save(); 
+
+    $adminContent = '<div>
+                          <ul><li>Dear Admin,</li></ul>
+                          <ul><li>You have a new product request</li></ul>
+                          <ul><li>Details</li></ul>
+                          <ul><li>Name:'.$name.'</li></ul>
+                          <ul><li>Email:'.$email.'</li></ul>
+                          <ul><li>Productname:'.$productname.'</li></ul>
+                          <ul><li>Brand:'.$brand.'</li></ul>
+                          <ul><li>Where have you seen this product:'.$seenproduct.'</li></ul>
+                          <ul><li>Tell us about the product:'.$aboutproduct.'</li></ul>
+						 </div>';
+
+
+$adminSubject = "New Dealer Registered";
+		
+		$adminEmail =Mage::getStoreConfig('trans_email/ident_general/email');
+		$headers  .= 'MIME-Version: 1.0'."\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		$headers .= 'From:'.$name.' <'.$email.'>';
+		
+		mail($adminEmail,$adminSubject,$adminContent,$headers);
+
+
+
+
+
+
+
+
+
+	           Mage::getSingleton('core/session')->addSuccess('Proudct Requested Successfully.'.$adminContent);			            
+	           $this->_redirect('requestproduct');
+           } catch (Exception $e) {
+	    		throw $e;
+		   }			            
+	}
+
+
+}
+?>

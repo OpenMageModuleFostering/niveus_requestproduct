@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Niveus_Requestproduct>
+            <version>1.1.0</version>
+        </Niveus_Requestproduct>
+    </modules>
+<frontend>
+       <routers>
+           <requestproduct>
+               <use>standard</use>
+               <args>
+                   <module>Niveus_Requestproduct</module>
+                   <frontName>requestnewproduct</frontName>  
+               </args>
+           </requestproduct>
+       </routers>
+       <layout>  
+           <updates>
+               <requestproduct>
+                   <file>requestproduct.xml</file> 
+               </requestproduct>
+           </updates>
+       </layout>
+    </frontend> 
+     
+    <global>
+        <helpers>
+            <niveus_requestproduct>
+                <!-- This is where we define our helper directory -->
+                <class>Niveus_Requestproduct_Helper</class>
+            </niveus_requestproduct>
+        </helpers>
+                    
+        <blocks>
+            <niveus_requestproduct>
+                <!-- Set a block definition and lookup directory -->
+                <class>Niveus_Requestproduct_Block</class>
+            </niveus_requestproduct>
+        </blocks>
+         
+        <models>
+            <niveus_requestproduct>
+                <!-- This is where we define our model directory -->
+                <class>Niveus_Requestproduct_Model</class>
+                <!-- Define a resource to create a custom table -->
+                <resourceModel>niveus_requestproduct_mysql4</resourceModel>
+            </niveus_requestproduct>
+             
+            <!-- Here's our resource model we'll use to create a database table -->
+            <niveus_requestproduct_mysql4>
+                <class>Niveus_Requestproduct_Model_Mysql4</class>
+                <entities>
+                    <!-- Let's define our table, we'll call it with the baz name, but the real table is foo_bar_baz -->
+                    <!-- After we define our entity, we can call it with our model by calling foo_bar/baz -->
+                    <requestnewproduct>
+                        <table>niveus_requestproduct_requestnewproduct</table>
+                    </requestnewproduct>
+                </entities>
+            </niveus_requestproduct_mysql4>
+        </models>
+         
+        <!-- And finally we define our resource setup script -->
+        <resources>
+            <niveus_requestproduct_setup>
+                <setup>
+                    <module>Niveus_Requestproduct</module>
+                </setup>
+            </niveus_requestproduct_setup>
+        </resources>
+    </global>
+     
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <!-- This is how we load our Adminhtml controllers -->
+                    <modules>
+                        <Niveus_Requestproduct before="Mage_Adminhtml">Niveus_Requestproduct_Adminhtml</Niveus_Requestproduct>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+     
+    <adminhtml>
+        <layout>
+            <updates>
+                <niveus_requestproduct>
+                    <!--
+                    We again keep a nice naming convention and make our module upgrade proof by placing it in a separate folder
+                    - Since we are in the adminhtml node, this will look for the XML file in the app/design/adminhtml/default/default root folder
+                    -->
+                    <file>niveus/requestproduct.xml</file>
+                </niveus_requestproduct>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

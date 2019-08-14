@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+	
+	<!-- Default -->
+    <default>
+    	<reference name="head">			
+			<action method="addCss"><stylesheet>css/niveus/requestproduct.css</stylesheet></action>
+		</reference>
+    </default>
+    
+	<requestproduct_index_index>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/2columns-left.phtml</template>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="niveus_requestproduct/requestnewproduct" name="requestproduct"
+				template="requestproduct/requestproduct.phtml" />
+		</reference>
+	</requestproduct_index_index>
+</layout>
