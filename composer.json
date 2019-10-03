@@ -1,16 +1,5 @@
 {
-    "name": "OpenMageModuleFostering/Niveus_Requestproduct",
-    "type": "magento-module",
-    "license": "OSL-v3.0",
-    "homepage": "",
-    "description": "Know your customers requirements better with the "Request New Product" Magento extension. The extension helps your keep in pace with the growing customer demands in your market.",
-    "authors": [
-    {
-        "name": "Niveus Solutions",
-        "email": "support@niveussolutions.com"
-    }
-],
-    "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+    "keywords": [
+        "openmage-module"
+    ]
 }
